@@ -12,6 +12,11 @@ class OverviewPage extends StatefulWidget {
 class _OverviewPageState extends State<OverviewPage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Overview page'),
+        centerTitle: true,
+      ),
+    );
   }
 }

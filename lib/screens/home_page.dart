@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:iubat_cgpa/screens/overview_page.dart';
-import 'package:iubat_cgpa/screens/profile_page.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class HomePage extends StatefulWidget {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:iubat_cgpa/screens/home_page.dart';
+import 'package:iubat_cgpa/screens/main_page.dart';
 
 class LoginScreen extends StatefulWidget {
   static String routeName = 'LoginScreen';
@@ -87,7 +87,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             onPressed: () {
                               Navigator.of(context).push(
                                 MaterialPageRoute(builder: (context) {
-                                  return HomePage();
+                                  return const MainPage();
                                 }),
                               );
                             },
@@ -125,6 +125,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ],
                 ),
               ),
+             
             ),
           ],
         ),
