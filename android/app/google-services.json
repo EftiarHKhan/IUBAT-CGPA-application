@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "398359508300",
+    "project_id": "iubat-cgpa",
+    "storage_bucket": "iubat-cgpa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:398359508300:android:dcd05b09f7400f414c0be9",
+        "android_client_info": {
+          "package_name": "com.example.iubat_cgpa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "398359508300-3cm8a171h72jfqr8r7vnu18phg5egdqa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJ2cH4qf97wtNGuDO5etGH1Np1L6fvQtI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "398359508300-3cm8a171h72jfqr8r7vnu18phg5egdqa.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "398359508300-k7eps3m10cbd6oqf5ode8q9bds7kefm4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.iubatCgpa"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
