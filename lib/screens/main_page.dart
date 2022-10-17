@@ -30,9 +30,9 @@ class _MainPageState extends State<MainPage> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         // type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.transparent,
-        // selectedItemColor: Colors.white,
-        // unselectedItemColor: Colors.white70,
+        backgroundColor: Color.fromRGBO(38, 38, 38, 2),
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Color.fromRGBO(95, 96, 101, 95),
         // iconSize: 20,
         // selectedFontSize: 25,
         // unselectedFontSize: 16,

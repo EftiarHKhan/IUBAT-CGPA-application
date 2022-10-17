@@ -15,6 +15,7 @@ class _HomePageState extends State<HomePage> {
   // final tabs = [HomePage(), OverviewPage(), ProfilePage()];
   @override
   Widget build(BuildContext context) {
+    // var data = '3.55';
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
@@ -24,35 +25,39 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.transparent,
         body: Stack(children: [
           Container(
-            padding: const EdgeInsets.only(left: 140, top: 60),
+            padding: const EdgeInsets.only(left: 30, top: 60),
             child: const Text(
-              'IUBAT CGPA',
+              'Very Good!',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 35,
                 fontWeight: FontWeight.bold,
                 fontFamily: 'Madrigal',
+                
               ),
             ),
           ),
           Container(
-            padding: const EdgeInsets.only(left: 140, top: 150),
+            padding: const EdgeInsets.only(left: 120, top: 150),
             child: CircularPercentIndicator(
               animation: true,
               animationDuration: 1000,
               radius: 90,
               lineWidth: 22,
-              percent: 0.6,
+              percent: 0.8,
               progressColor: Color.fromARGB(255, 250, 155, 13),
               backgroundColor: Color.fromARGB(167, 99, 90, 90),
               circularStrokeCap: CircularStrokeCap.round,
-              center: const Text(
-                'CGPA\n3.55',
+              
+               center: const Text(
+                'CGPA',
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 18,
                   color: Colors.white,
-                  fontWeight: FontWeight.bold,
+                  // fontWeight: FontWeight.bold,
                 ),
+                
+                
               ),
             ),
           ),
