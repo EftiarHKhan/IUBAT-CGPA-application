@@ -11,8 +11,6 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -79,7 +77,6 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: 10,
                     ),
                     GestureDetector(
-                      
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -125,7 +122,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   ],
                 ),
               ),
-             
             ),
           ],
         ),
