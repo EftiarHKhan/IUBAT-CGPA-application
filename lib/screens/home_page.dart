@@ -52,8 +52,12 @@ class _HomePageState extends State<HomePage> {
               //     // fontWeight: FontWeight.bold,
               //   ),
               // ),
+
               center: Column(
                 children: const [
+                  SizedBox(
+                    height: 55,
+                  ),
                   Text(
                     'CGPA',
                     style: TextStyle(fontSize: 20, color: Colors.white),
@@ -70,7 +74,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           Container(
-            padding: const EdgeInsets.only(left: 30, top: 400),
+            padding: const EdgeInsets.only(left: 60, top: 450),
             child: Row(
               children: [
                 Column(
@@ -82,11 +86,13 @@ class _HomePageState extends State<HomePage> {
                         // 3 values
                         Container(
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
+                            borderRadius: BorderRadius.circular(10),
                             color: const Color.fromRGBO(38, 38, 38, 2),
                           ),
-                          margin: const EdgeInsets.all(15.0),
-                          padding: const EdgeInsets.all(20.0),
+                          margin: const EdgeInsets.all(5.0),
+                          padding: const EdgeInsets.all(8.0),
+                          height: 60,
+                          width: 90,
                           child: Column(
                             children: const [
                               Text(
@@ -96,11 +102,14 @@ class _HomePageState extends State<HomePage> {
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold),
                               ),
+                              SizedBox(
+                                height: 5,
+                              ),
                               Text(
                                 'Year',
                                 style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 10,
+                                  fontSize: 12,
                                 ),
                               ),
                             ],
@@ -109,11 +118,13 @@ class _HomePageState extends State<HomePage> {
 
                         Container(
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            color: Color.fromRGBO(38, 38, 38, 2),
+                            borderRadius: BorderRadius.circular(10),
+                            color: const Color.fromRGBO(38, 38, 38, 2),
                           ),
-                          margin: const EdgeInsets.all(15.0),
-                          padding: const EdgeInsets.all(20.0),
+                          margin: const EdgeInsets.all(5.0),
+                          padding: const EdgeInsets.all(8.0),
+                          height: 60,
+                          width: 90,
                           child: Column(
                             children: const [
                               Text(
@@ -123,11 +134,14 @@ class _HomePageState extends State<HomePage> {
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold),
                               ),
+                              SizedBox(
+                                height: 5,
+                              ),
                               Text(
                                 'Dept',
                                 style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 10,
+                                  fontSize: 12,
                                 ),
                               ),
                             ],
@@ -136,11 +150,13 @@ class _HomePageState extends State<HomePage> {
 
                         Container(
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5),
-                            color: Color.fromRGBO(38, 38, 38, 2),
+                            borderRadius: BorderRadius.circular(10),
+                            color: const Color.fromRGBO(38, 38, 38, 2),
                           ),
-                          margin: const EdgeInsets.all(15.0),
-                          padding: const EdgeInsets.all(20.0),
+                          margin: const EdgeInsets.all(5.0),
+                          padding: const EdgeInsets.all(8.0),
+                          height: 60,
+                          width: 90,
                           child: Column(
                             children: const [
                               Text(
@@ -150,11 +166,14 @@ class _HomePageState extends State<HomePage> {
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold),
                               ),
+                              SizedBox(
+                                height: 5,
+                              ),
                               Text(
                                 'Faculty',
                                 style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 10,
+                                  fontSize: 12,
                                 ),
                               ),
                             ],
@@ -169,11 +188,13 @@ class _HomePageState extends State<HomePage> {
                       children: [
                         Container(
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            color: Color.fromRGBO(38, 38, 38, 2),
+                            borderRadius: BorderRadius.circular(10),
+                            color: const Color.fromRGBO(38, 38, 38, 2),
                           ),
-                          margin: const EdgeInsets.all(15.0),
-                          padding: const EdgeInsets.all(20.0),
+                          margin: const EdgeInsets.all(5.0),
+                          padding: const EdgeInsets.all(8.0),
+                          height: 60,
+                          width: 90,
                           child: Column(
                             children: const [
                               Text(
@@ -183,11 +204,14 @@ class _HomePageState extends State<HomePage> {
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold),
                               ),
+                              SizedBox(
+                                height: 5,
+                              ),
                               Text(
                                 'Semester',
                                 style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 10,
+                                  fontSize: 12,
                                 ),
                               ),
                             ],
@@ -195,11 +219,13 @@ class _HomePageState extends State<HomePage> {
                         ),
                         Container(
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            color: Color.fromRGBO(38, 38, 38, 2),
+                            borderRadius: BorderRadius.circular(10),
+                            color: const Color.fromRGBO(38, 38, 38, 2),
                           ),
-                          margin: const EdgeInsets.all(15.0),
-                          padding: const EdgeInsets.all(20.0),
+                          margin: const EdgeInsets.all(5.0),
+                          padding: const EdgeInsets.all(8.0),
+                          height: 60,
+                          width: 90,
                           child: Column(
                             children: const [
                               Text(
@@ -209,11 +235,14 @@ class _HomePageState extends State<HomePage> {
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold),
                               ),
+                              SizedBox(
+                                height: 5,
+                              ),
                               Text(
                                 'Batch',
                                 style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 10,
+                                  fontSize: 12,
                                 ),
                               ),
                             ],
@@ -221,11 +250,13 @@ class _HomePageState extends State<HomePage> {
                         ),
                         Container(
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            color: Color.fromRGBO(38, 38, 38, 2),
+                            borderRadius: BorderRadius.circular(10),
+                            color: const Color.fromRGBO(38, 38, 38, 2),
                           ),
-                          margin: const EdgeInsets.all(15.0),
-                          padding: const EdgeInsets.all(20.0),
+                          margin: const EdgeInsets.all(5.0),
+                          padding: const EdgeInsets.all(8.0),
+                          height: 60,
+                          width: 90,
                           child: Column(
                             children: const [
                               Text(
@@ -235,11 +266,14 @@ class _HomePageState extends State<HomePage> {
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold),
                               ),
+                              SizedBox(
+                                height: 5,
+                              ),
                               Text(
                                 'Credits',
                                 style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 10,
+                                  fontSize: 12,
                                 ),
                               ),
                             ],

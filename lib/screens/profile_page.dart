@@ -12,10 +12,10 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Profile page'),
-        centerTitle: true,
+    return Container(
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+            image: AssetImage('assets/images/home.png'), fit: BoxFit.cover),
       ),
     );
   }
