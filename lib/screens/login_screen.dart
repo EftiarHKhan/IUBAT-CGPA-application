@@ -1,5 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:iubat_cgpa/screens/main_page.dart';
 
 class LoginScreen extends StatefulWidget {
   static String routeName = 'LoginScreen';
@@ -11,6 +11,24 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  // text controllers
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+
+  Future signIn() async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+      email: _emailController.text.trim(),
+      password: _passwordController.text.trim(),
+    );
+  }
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -47,8 +65,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       onTap: () {
                         FocusScope.of(context).unfocus();
                       },
-                      child: const TextField(
-                        decoration: InputDecoration(
+                      child: TextField(
+                        controller: _emailController,
+                        decoration: const InputDecoration(
                           hintText: 'Enter your ID here',
                           hintStyle: TextStyle(color: Colors.white),
                           // border: UnderlineInputBorder(
@@ -64,9 +83,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       onTap: () {
                         FocusScope.of(context).unfocus();
                       },
-                      child: const TextField(
+                      child: TextField(
+                        controller: _passwordController,
                         obscureText: true,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           hintText: 'Password',
                           hintStyle: TextStyle(color: Colors.white),
                           // errorText: 'Wrong password',
@@ -77,21 +97,40 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: 10,
                     ),
                     GestureDetector(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          IconButton(
-                            onPressed: () {
-                              Navigator.of(context).push(
-                                MaterialPageRoute(builder: (context) {
-                                  return const MainPage();
-                                }),
-                              );
-                            },
-                            icon: const Icon(Icons.arrow_forward_ios),
-                            color: Colors.white,
+                      // child: Row(
+                      //   mainAxisAlignment: MainAxisAlignment.center,
+                      //   children: [
+                      //     IconButton(
+                      //       onPressed: () {
+                      //         Navigator.of(context).push(
+                      //           MaterialPageRoute(builder: (context) {
+                      //             return const MainPage();
+                      //           }),
+                      //         );
+                      //       },
+                      //       icon: const Icon(Icons.arrow_forward_ios),
+                      //       color: Colors.white,
+                      //     ),
+                      //   ],
+                      // ),
+                      onTap: signIn,
+                      child: Container(
+                        padding: const EdgeInsets.all(20),
+                        decoration: BoxDecoration(
+                          color: Colors.blue,
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: const Center(
+                          child: Text(
+                            'Log in',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: 'lato',
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ],
+                        ),
                       ),
                     ),
                     const SizedBox(

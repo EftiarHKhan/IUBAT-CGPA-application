@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
@@ -11,6 +13,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  // double per = 3.75;
+  // double cgpa = 0.25 * per;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -60,7 +64,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   Text(
                     'CGPA',
-                    style: TextStyle(fontSize: 20, color: Colors.white),
+                    style: TextStyle(fontSize: 18, color: Colors.white),
                   ),
                   Text(
                     '3.65',
