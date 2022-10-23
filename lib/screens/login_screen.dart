@@ -15,12 +15,12 @@ class _LoginScreenState extends State<LoginScreen> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
 
-  Future signIn() async {
-    await FirebaseAuth.instance.signInWithEmailAndPassword(
-      email: _emailController.text.trim(),
-      password: _passwordController.text.trim(),
-    );
-  }
+  // Future signIn() async {
+  //   await FirebaseAuth.instance.signInWithEmailAndPassword(
+  //     email: _emailController.text.trim(),
+  //     password: _passwordController.text.trim(),
+  //   );
+  // }
 
   @override
   void dispose() {
@@ -28,6 +28,9 @@ class _LoginScreenState extends State<LoginScreen> {
     _passwordController.dispose();
     super.dispose();
   }
+
+  //password visibilty
+  bool isHiddenPassword = true;
 
   @override
   Widget build(BuildContext context) {
@@ -70,9 +73,13 @@ class _LoginScreenState extends State<LoginScreen> {
                         decoration: const InputDecoration(
                           hintText: 'Enter your ID here',
                           hintStyle: TextStyle(color: Colors.white),
+
                           // border: UnderlineInputBorder(
                           //   borderSide: BorderSide(color: Colors.green),
                           // ),
+                        ),
+                        style: const TextStyle(
+                          color: Colors.white,
                         ),
                       ),
                     ),
@@ -85,11 +92,22 @@ class _LoginScreenState extends State<LoginScreen> {
                       },
                       child: TextField(
                         controller: _passwordController,
-                        obscureText: true,
-                        decoration: const InputDecoration(
+                        obscureText: isHiddenPassword,
+                        decoration: InputDecoration(
                           hintText: 'Password',
-                          hintStyle: TextStyle(color: Colors.white),
+                          hintStyle: const TextStyle(color: Colors.white),
+                          // errorText: ,
+                          suffixIcon: InkWell(
+                            onTap: _togglePasswordView,
+                            child: const Icon(
+                              Icons.visibility,
+                              color: Colors.white,
+                            ),
+                          ),
                           // errorText: 'Wrong password',
+                        ),
+                        style: const TextStyle(
+                          color: Colors.white,
                         ),
                       ),
                     ),
@@ -97,41 +115,42 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: 10,
                     ),
                     GestureDetector(
-                      // child: Row(
-                      //   mainAxisAlignment: MainAxisAlignment.center,
-                      //   children: [
-                      //     IconButton(
-                      //       onPressed: () {
-                      //         Navigator.of(context).push(
-                      //           MaterialPageRoute(builder: (context) {
-                      //             return const MainPage();
-                      //           }),
-                      //         );
-                      //       },
-                      //       icon: const Icon(Icons.arrow_forward_ios),
-                      //       color: Colors.white,
-                      //     ),
-                      //   ],
-                      // ),
-                      onTap: signIn,
-                      child: Container(
-                        padding: const EdgeInsets.all(20),
-                        decoration: BoxDecoration(
-                          color: Colors.blue,
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: const Center(
-                          child: Text(
-                            'Log in',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontFamily: 'lato',
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
+                      // onTap: signIn,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          IconButton(
+                            onPressed: () async {
+                              FirebaseAuth.instance.signInWithEmailAndPassword(
+                                email: _emailController.text.trim(),
+                                password: _passwordController.text.trim(),
+                              );
+                            },
+                            icon: const Icon(Icons.arrow_forward_ios),
+                            color: Colors.white,
                           ),
-                        ),
+                        ],
                       ),
+
+                      // onTap: signIn,
+                      // child: Container(
+                      //   padding: const EdgeInsets.all(20),
+                      //   decoration: BoxDecoration(
+                      //     color: Colors.blue,
+                      //     borderRadius: BorderRadius.circular(12),
+                      //   ),
+                      //   child: const Center(
+                      //     child: Text(
+                      //       'Log in',
+                      //       style: TextStyle(
+                      //         color: Colors.white,
+                      //         fontFamily: 'lato',
+                      //         fontSize: 18,
+                      //         fontWeight: FontWeight.bold,
+                      //       ),
+                      //     ),
+                      //   ),
+                      // ),
                     ),
                     const SizedBox(
                       height: 210,
@@ -166,5 +185,11 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       ),
     );
+  }
+
+  void _togglePasswordView() {
+    setState(() {
+      isHiddenPassword = !isHiddenPassword;
+    });
   }
 }
