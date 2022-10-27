@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:iubat_cgpa/screens/home_page.dart';
+import 'package:iubat_cgpa/screens/semester_page.dart';
 
 class OverviewPage extends StatefulWidget {
   static String routeName = 'OverviewPage';
@@ -27,7 +27,7 @@ class _OverviewPageState extends State<OverviewPage> {
         body: Column(
           children: [
             Container(
-              padding: EdgeInsets.only(left: 30, top: 60),
+              padding: const EdgeInsets.only(left: 30, top: 60),
               child: Row(
                 children: const [
                   Text(
@@ -73,34 +73,45 @@ class _OverviewPageState extends State<OverviewPage> {
                         padding: const EdgeInsets.only(left: 0, top: 20),
                         itemCount: 3,
                         itemBuilder: (BuildContext context, int index) {
-                          return Container(
-                            padding: EdgeInsets.all(10),
-                            margin: EdgeInsets.only(left: 10, right: 90),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: const Color.fromRGBO(38, 38, 38, 2),
-                            ),
-                            child: Row(
-                              children: [
-                                Text(
-                                  '${cgpa[index]}',
-                                  style: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20,
+                          return InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: ((context) => const SemesterPage()),
+                                ),
+                              );
+                            },
+                            child: Container(
+                              padding: const EdgeInsets.all(10),
+                              margin:
+                                  const EdgeInsets.only(left: 10, right: 90),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: const Color.fromRGBO(38, 38, 38, 2),
+                              ),
+                              child: Row(
+                                children: [
+                                  Text(
+                                    '${cgpa[index]}',
+                                    style: const TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 20,
+                                    ),
                                   ),
-                                ),
-                                Spacer(),
-                                Text(
-                                  '${semester[index]}',
-                                  style: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20,
+                                  const Spacer(),
+                                  Text(
+                                    '${semester[index]}',
+                                    style: const TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 20,
+                                    ),
                                   ),
-                                ),
-                                const SizedBox(
-                                  height: 30,
-                                ),
-                              ],
+                                  const SizedBox(
+                                    height: 30,
+                                  ),
+                                ],
+                              ),
                             ),
                           );
                         },

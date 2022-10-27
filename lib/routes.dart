@@ -6,6 +6,7 @@ import 'package:iubat_cgpa/screens/login_screen.dart';
 import 'package:iubat_cgpa/screens/main_page.dart';
 import 'package:iubat_cgpa/screens/overview_page.dart';
 import 'package:iubat_cgpa/screens/profile_page.dart';
+import 'package:iubat_cgpa/screens/semester_page.dart';
 
 Map<String, WidgetBuilder> routes = {
   AuthPage.routeName: (context) => const AuthPage(),
@@ -14,4 +15,5 @@ Map<String, WidgetBuilder> routes = {
   ProfilePage.routeName: (context) => const ProfilePage(),
   OverviewPage.routeName: (context) => const OverviewPage(),
   MainPage.routeName: (context) => const MainPage(),
+  SemesterPage.routeName: (context) => const SemesterPage(),
 };
