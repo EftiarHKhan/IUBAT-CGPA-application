@@ -1,5 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/link.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class LoginScreen extends StatefulWidget {
   static String routeName = 'LoginScreen';
@@ -164,16 +166,13 @@ class _LoginScreenState extends State<LoginScreen> {
                             fontSize: 15,
                           ),
                         ),
-                        TextButton(
-                          onPressed: () {},
-                          child: const Text(
-                            'Go Here',
-                            style: TextStyle(
-                              decoration: TextDecoration.none,
-                              fontSize: 18,
-                              color: Colors.green,
-                            ),
-                          ),
+                        Link(
+                          target: LinkTarget.self,
+                          uri: Uri.parse('https://iubat.edu'),
+                          builder: ((context, followLink) => ElevatedButton(
+                                onPressed: followLink,
+                                child: const Text('Go here'),
+                              )),
                         ),
                       ],
                     ),

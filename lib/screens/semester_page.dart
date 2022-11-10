@@ -19,6 +19,19 @@ class _SemesterPageState extends State<SemesterPage> {
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
+        // appBar: AppBar(
+        //   leading: BackButton(
+        //     onPressed: (() {
+        //       Navigator.pop(
+        //         context,
+        //         MaterialPageRoute(
+        //           builder: ((context) => const SemesterPage()),
+        //         ),
+        //       );
+        //     }),
+        //   ),
+        //   backgroundColor: Colors.transparent,
+        // ),
         body: Column(
           children: [
             Container(
@@ -65,18 +78,17 @@ class _SemesterPageState extends State<SemesterPage> {
                 ],
               ),
             ),
-
             Expanded(
               child: ListView.separated(
                   shrinkWrap: true,
-                  itemCount: 3,
+                  itemCount: 4,
                   separatorBuilder: (BuildContext context, int index) =>
                       const Divider(),
                   itemBuilder: (BuildContext context, int index) {
                     return Column(
                       children: [
                         Container(
-                          padding: const EdgeInsets.all(10),
+                          padding: const EdgeInsets.all(5),
                           margin: const EdgeInsets.all(15),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
@@ -109,12 +121,12 @@ class _SemesterPageState extends State<SemesterPage> {
                                 subtitle: const Text(
                                   'CSC 387',
                                   style: TextStyle(
-                                    color: Colors.blue,
+                                    color: Color.fromARGB(255, 205, 206, 207),
                                   ),
                                 ),
                                 trailing: Container(
-                                  height: 50,
-                                  width: 50,
+                                  height: 40,
+                                  width: 40,
                                   decoration: const BoxDecoration(
                                       shape: BoxShape.circle,
                                       color: Colors.black),
@@ -122,7 +134,9 @@ class _SemesterPageState extends State<SemesterPage> {
                                     child: Text(
                                       '3',
                                       style: TextStyle(
-                                          color: Colors.white, fontSize: 15),
+                                          color: Colors.white,
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.bold),
                                     ),
                                   ),
                                 ),
@@ -134,48 +148,6 @@ class _SemesterPageState extends State<SemesterPage> {
                     );
                   }),
             ),
-            // ListView.separated(
-            //   itemCount: 1,
-            //   itemBuilder: (BuildContext context, int index) {
-            //     return Column(
-            //       children: [
-            //         Container(
-            //           decoration: BoxDecoration(
-            //             borderRadius: BorderRadius.circular(10),
-            //             color: const Color.fromRGBO(38, 38, 38, 2),
-            //           ),
-            //           child: Column(
-            //             children: const [
-            //               Text('3.75'),
-            //               Text('System Analysis and Design'),
-            //             ],
-            //           ),
-            //         ),
-            //       ],
-            //     );
-            //   },
-            //   separatorBuilder: (BuildContext context, int index) =>
-            //       const Divider(),
-            // ),
-
-            // Container(
-            //   padding: const EdgeInsets.all(10),
-            //   margin: const EdgeInsets.all(15),
-            //   child: Expanded(
-            //     child: Column(
-            //       children: const [
-            //         ListTile(
-            //           leading: Icon(Icons.circle),
-            //           title: Text('System Analysis and Design'),
-            //           subtitle: Text('CSC 387'),
-            //         ),
-            //         ListTile(
-            //           leading: Icon(Icons.circle),
-            //         ),
-            //       ],
-            //     ),
-            //   ),
-            // ),
           ],
         ),
       ),
